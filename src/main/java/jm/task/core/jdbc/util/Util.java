@@ -34,18 +34,14 @@ public class Util {
     }
 
     public static SessionFactory getSessionFactory() {
-
         Properties properties = new Properties();
         properties.setProperty("hibernate.driver_class", drive);
         properties.setProperty("hibernate.connection.url", url);
         properties.setProperty("hibernate.connection.username", log);
         properties.setProperty("hibernate.connection.password", pass);
         properties.setProperty("hibernate.dialect", dialect);
-
         Configuration configuration = new Configuration()
-                .addAnnotatedClass(User.class)
-                .setProperties(properties);
-
+                .addAnnotatedClass(User.class).setProperties(properties);
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
 
