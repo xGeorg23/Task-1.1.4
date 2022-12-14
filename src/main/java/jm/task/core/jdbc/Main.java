@@ -15,10 +15,7 @@ public class Main {
         userService.saveUser("Jon","J", (byte) 1);
         userService.saveUser("Gosha","G", (byte) 22);
         userService.saveUser("Dimon","Ty-py-py-py-py-py", (byte) 127);
-        List<User> user = userService.getAllUsers();
-        for (User person: user) {
-            System.out.println(person);
-        }
+        userService.getAllUsers().stream().forEach(System.out::println);
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }
