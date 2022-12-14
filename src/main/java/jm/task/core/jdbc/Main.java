@@ -9,21 +9,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // реализуйте алгоритм здесь
-//        UserServiceImpl userService = new UserServiceImpl();
-//        userService.dropUsersTable();
-//        userService.createUsersTable();
-//        userService.saveUser("Ivan","I", (byte) 31);
-//        userService.saveUser("Jon","J", (byte) 1);
-//        userService.saveUser("Gosha","G", (byte) 22);
-//        userService.saveUser("Dimon","Ty-py-py-py-py-py", (byte) 127);
-//        List<User> user = userService.getAllUsers();
-//        for (User person: user) {
-//            System.out.println(person);
-//        }
-//        userService.cleanUsersTable();
-//        userService.dropUsersTable();
-
-        Util.getSessionFactory();
+        UserServiceImpl userService = new UserServiceImpl();
+        userService.createUsersTable();
+        userService.saveUser("Ivan","I", (byte) 31);
+        userService.saveUser("Jon","J", (byte) 1);
+        userService.saveUser("Gosha","G", (byte) 22);
+        userService.saveUser("Dimon","Ty-py-py-py-py-py", (byte) 127);
+        List<User> user = userService.getAllUsers();
+        for (User person: user) {
+            System.out.println(person);
+        }
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
